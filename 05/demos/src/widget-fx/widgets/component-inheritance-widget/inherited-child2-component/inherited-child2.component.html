@@ -1,0 +1,17 @@
+<div>
+    This component's uses it's own HTML template because it's UI is structured
+    differently from it's parent.  Some of this could have been accomplished
+    with CSS and Typescript, but laying out the structure in HTML is easier
+    and faster.
+</div>
+<div class='header'>
+    This is the {{name}} component.</div>
+<div class='content'>{{content}}</div>
+<br />
+<p>Including a paragraph that is hardcoded into the HTML.</p>
+<p>
+    Inherited children have access to services injected into their parent:
+    <i>{{svc.prop1}}</i>
+</p>
+
+<div class='footer'>{{footer}}</div>

@@ -1,0 +1,28 @@
+<!--
+    Uncomment the first block to use ComponentFactoryResolver
+    Uncomment the second block to use ngComponentOutlet
+-->
+
+<div>
+        (Using ComponentFactoryResolver)
+    <mat-grid-list cols='3' [rowHeight]='getGridRowHeight()' gutterSize='10px'>
+        <mat-grid-tile class='widget-zone-wrapper' colspan='2'>
+            <widget-zone></widget-zone>
+        </mat-grid-tile>
+        <mat-grid-tile class='widget-zone-wrapper'>
+            <widget-zone></widget-zone>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<!-- <div>
+    (Using ngComponentOutlet)
+    <mat-grid-list cols='3' [rowHeight]='getGridRowHeight()' gutterSize='10px'>
+        <mat-grid-tile class='widget-zone-wrapper' colspan='2'>
+            <widget-zone-co></widget-zone-co>
+        </mat-grid-tile>
+        <mat-grid-tile class='widget-zone-wrapper'>
+            <widget-zone-co></widget-zone-co>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div> -->

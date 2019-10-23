@@ -1,0 +1,25 @@
+<h1>{{widgetTitle}}</h1>
+<button (click)="toggle()">Toggle</button>
+<hr />
+
+<h4>Inline If (no else):</h4>
+<div *ngIf="isEnabled">
+    This is the 'enabled' content, specified inline.
+</div>
+
+<h4>Inline If:</h4>
+<div *ngIf="isEnabled;else disabled">
+    This is the 'enabled' content, specified inline.
+</div>
+
+<h4>Template If:</h4>
+<div *ngIf="isEnabled; then enabled; else disabled"></div>
+
+
+<!--Templates-->
+<ng-template #enabled>
+    This is the 'enabled' content, specified in a template.
+</ng-template>
+<ng-template #disabled>
+    This is the 'disabled' content.
+</ng-template>

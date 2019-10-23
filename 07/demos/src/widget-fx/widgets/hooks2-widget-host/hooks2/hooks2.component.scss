@@ -1,0 +1,24 @@
+::ng-deep body{
+    font-size: 10pt;
+}
+::ng-deep .hooks2{
+    min-height:200px;
+    width: 400px;
+    border: 1px solid black;
+    text-align:left;
+    vertical-align: top;
+    padding:10px 5px 10px 5px;
+}
+::ng-deep p.valEntry{
+    -webkit-margin-before: 0!important;
+    -webkit-margin-after: 0!important;
+}
+.hookName{
+    font-weight:700;
+    text-decoration: underline;
+    text-align:center;
+}
+.controls{
+    text-align: left;
+}
+

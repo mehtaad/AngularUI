@@ -1,0 +1,82 @@
+<table>
+    <tr>
+        <td rowspan='4' id='logCell'>
+            (Most recent events on top)
+            <button (click)="clearLog()">Clear Log</button>
+            <hr />
+            <div id='hookLog'>
+                <p *ngFor="let entry of hookLog;" [innerHtml]="entry"></p>
+            </div>
+        </td>
+        <td class='controls'>
+                <button (click)="changeBoundVal()">Change Bound Value</button>
+                <p>Current Value: {{boundVal}}</p>
+                <button (click)="changeLocalVal()">Change Local Value</button>
+                <p>Current Value: {{localVal}}</p>
+        </td>
+        <td class='controls'>
+                <button (click)="injectView()">Inject Template</button>
+                <p>
+                    <span #container></span>
+                </p>
+        </td>
+        <td class='controls'>
+            <div id='eventTrap' (mousemove)="onMouseMove()">
+                Move mouse around in here and watch hooks fly...
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks'>
+            <span [style.color]='getColor("ctor")'>constructor</span>
+            <div>{{ctor_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+
+        <td class='hooks'>
+                <span [style.color]='getColor("ngOnChanges")'>ngOnChanges</span>
+            <div>{{ngOnChanges_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngOnInit")'>ngOnInit</span>
+            <div>{{ngOnInit_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngDoCheck")'>ngDoCheck</span>
+            <div>{{ngDoCheck_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngAfterContentInit")'>ngAfterContentInit</span>
+            <div>{{ngAfterContentInit_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngAfterContentChecked")'>ngAfterContentChecked</span>
+            <div>{{ngAfterContentChecked_LastRun | date:"HH:mm:ss:SSS"}}</div>
+
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngAfterViewInit")'>ngAfterViewInit</span>
+            <div>{{ngAfterViewInit_LastRun | date:"HH:mm:ss:SSS"}}</div>
+
+        </td>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngAfterViewChecked")'>ngAfterViewChecked</span>
+            <div>{{ngAfterViewChecked_LastRun | date:"HH:mm:ss:SSS"}}</div>
+
+        </td>
+        <td class='hooks'>
+                <span [style.color]='getColor("ngOnDestroy")'>ngOnDestroy</span>
+            <div>{{ngOnDestroy_LastRun | date:"HH:mm:ss:SSS"}}</div>
+        </td>
+    </tr>
+</table>
+
+<ng-template #templ1>
+    This is template 1
+</ng-template>
+<ng-template #templ2>
+    This is template 2
+</ng-template>

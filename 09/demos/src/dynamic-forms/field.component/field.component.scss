@@ -1,0 +1,51 @@
+.fieldRow{
+    font-size: 14pt;
+    margin: 5px 0 10px 15px;
+}
+.fieldLabel{
+    min-width:100px;    
+    text-align: right;
+    margin-right:15px;
+    float: left;
+}
+.formField{
+    min-width:150px;
+}
+textarea{
+    min-width:250px;
+    min-height:100px;
+}
+input[type='text']{
+    min-width:250px;
+}
+.messageIcon{
+    font-size:12pt;
+    font-weight:900;    
+    height: 15px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    cursor: pointer;
+}
+.errorIcon{
+    background-color: #df0606;
+    color: white;
+}
+.required::after{
+    color:#df0606;
+    content: '*';
+}
+.hint{
+    background-color: #0686fd;
+    color: white;
+}
+.msg{
+    min-width:150px;
+    border: 1px solid #CCC;
+    background-color: antiquewhite;
+    padding: 5px 10px 5px 10px;
+    margin-left:20px;
+}

@@ -1,0 +1,23 @@
+.formButton{
+    margin: 10px;
+} 
+#buttons{
+    margin-left:200px;
+}
+#modal{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-color: black;
+    opacity: .8;
+}
+
+#message {
+    position: absolute;
+    color:black;
+    font-size: 30pt;
+    text-align: center;
+    width:100%;
+    top:300px;
+    color:red;
+}

@@ -1,0 +1,27 @@
+.hooks{
+    height:100px;
+    width: 200px;
+    border: 1px solid black;
+    text-align:center;
+}
+#logCell{
+    border: 1px solid black;
+    height:450px;
+    vertical-align: top;
+    overflow:hidden;
+    min-width:375px;
+}
+#hookLog{
+    max-height:450px;
+    overflow-y: auto;
+    line-height:2px;
+    text-align:left;
+}
+.controls{
+    text-align: left;
+}
+#eventTrap{
+    height:100px;
+    width:200px;
+    background-color: yellow;
+}

@@ -1,0 +1,31 @@
+<h1>Manipulating the UI</h1>
+<hr />
+
+<h4>Show/Hide</h4>
+<button (click)="flipUI()">Show/Hide</button>
+<button (click)="flipUI()">ngIf</button>
+<div class='container filled' *ngIf="inDom" [hidden]="hidden"></div>
+
+<h4>Add/Remove Content</h4>
+<button (click)="toggleContent()">Content</button>
+<div class='container' [innerHtml]="boundContent"></div>
+
+<h4>Add/Remove Class</h4>
+<button (click)="toggleClass()">Class</button>
+<div class='container' #class></div>
+
+<h4>Add/Remove Attribute</h4>
+<button (click)="toggleAttribute()">Attribute</button>
+<br />
+<button #attr>Click Me!</button>
+
+<h4>Add/Remove Style</h4>
+<button (click)="toggleStyle()">Style</button>
+<div class='container' #style>This is some text</div>
+
+<h4>Listeners</h4>
+<button (click)="toggleListener()">Listener</button>
+<br />
+Listener is: {{listenerIs()}}
+<div class='container filled' #listener></div>
+

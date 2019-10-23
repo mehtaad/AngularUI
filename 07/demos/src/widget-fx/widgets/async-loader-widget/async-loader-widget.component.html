@@ -1,0 +1,13 @@
+<h1>Async Loader</h1>
+<button (click)="initObservable()">Init Observable</button>
+<hr />
+<ng-container *ngIf="myObservable | async; else loader; let cust">
+    CustomerID: {{cust.id}}
+</ng-container>
+<br />
+
+
+<!--I like to define templates down at the bottom so they're out of the way... -->
+<ng-template #loader>
+    Loading...
+</ng-template>

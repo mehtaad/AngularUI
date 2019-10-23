@@ -1,0 +1,20 @@
+<h1>Content Projection</h1>
+<content-projection-child>
+    <p>This content is unnamed. If an ng-content tag without a <i>select</i> attribute 
+    is specified in the child, it will serve as a 'catch-all' for this content.</p>
+    <div class='content'>
+        <p>Content can be projected from parent to child without any code. Interestingly, 
+            although the content is displayed inside the child component and in the 
+            location specified by the child, all styling is controlled by the parent's
+            stylesheet.</p>
+        <p>The title is obeying the styling specified in the child because the ng-content 
+            tag is wrapped by a DIV which specifies the style.</p>
+    </div>
+    <p>Even if is it spread across the content inside the child element tag inside 
+    the parent </p>
+    <p no-selector>Even if content has a selector or class, if it isn't explicitly
+    targeted to a slot in the child, it will be considered 'unnamed'. </p>
+    <div top>
+        Content Projection
+    </div>
+</content-projection-child>

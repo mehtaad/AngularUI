@@ -1,0 +1,54 @@
+<div [formGroup]="form" class='fieldRow'>
+
+  <div class='fieldLabel'>
+    <label [attr.for]="field.internalName.value" [ngClass]="{required: field.required}">
+      {{field.displayName}}:
+    </label>
+  </div>
+  <div class='formField'>
+    <ng-container *ngTemplateOutlet='getTemplate()'></ng-container>
+    <span class='messageIcon hint' *ngIf="showHintLink" (click)="showHintDetails($event)" 
+      (mouseenter)='showHintMsg($event)' (mouseleave)='hideMsg($event)'>?</span>
+    <span class="messageIcon errorIcon" *ngIf="showError" 
+      (mouseenter)='showErrMsg($event)'  (mouseleave)='hideMsg($event)'>!</span>
+  </div>
+
+
+  <!-- Field Templates -->
+  <ng-template #text>
+    <input #fieldElement [id]="field.internalName.value" type="text" [placeholder]="field.placeholder">
+  </ng-template>
+
+  <ng-template #textUnique>
+    <input #fieldElement [formControlName]="field.internalName.value" [id]="field.internalName.value" type="text" [placeholder]="field.placeholder"
+      unique [targetField]="field" [form]="form">
+  </ng-template>
+
+  <ng-template #note>
+    <div style='float:left'>
+      <textarea #fieldElement [formControlName]="field.internalName.value" [id]="field.internalName.value" [placeholder]="field.placeholder"
+        (keydown)="keydown($event)" (contextmenu)="cancelMenu()"></textarea>
+    </div>
+    <div style='float:left;margin-left:20px;' [innerHtml]="form.value[field.internalName.value]">
+    </div>
+    <div style='clear:both'></div>
+  </ng-template>
+
+  <ng-template #checkbox>
+    <input #fieldElement [formControlName]="field.internalName.value" [id]="field.internalName.value" type="checkbox">
+  </ng-template>
+
+  <ng-template #radiobutton>
+    <input #fieldElement [formControlName]="field.internalName.value" [id]="field.internalName.value" type="radio">
+  </ng-template>
+
+  <ng-template #dropdown>
+    <select #fieldElement [id]="field.internalName.value" [formControlName]="field.internalName.value">
+      <option *ngFor="let opt of field.choices" [value]="opt.value">{{opt.text}}</option>
+    </select>
+  </ng-template>
+
+  <ng-template #number>
+    <input #fieldElement [formControlName]="field.internalName.value" [id]="field.internalName.value" type="number">
+  </ng-template>
+</div>

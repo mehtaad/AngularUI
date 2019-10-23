@@ -1,0 +1,108 @@
+<h1>{{widgetTitle}}</h1>
+
+<button (click)="changeSwitchVar()">Change SwitchVar</button>
+<hr />
+
+<p class='header'>ngSwitch (Typical):</p>
+
+<ng-container [ngSwitch]="switchVar1">
+    <ng-container *ngSwitchCase="'a'">
+        <p>
+            This is case 1.
+        </p>
+        <p>
+            It can get pretty long and hard to work with in your HTML file
+        </p>
+        <p>
+            if there's a lot of "stuff" to show for each case
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'b'">
+        <p>
+            This is case 2.
+        </p>
+        <p>
+            While only one of these show up in the UI
+        </p>
+        <p>
+            they're all specified in the HTML inside the ngSwitch
+        </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="'c'">
+        <p>
+            This is case 3.
+        </p>
+        <p>
+            Which can really bloat your HTML file
+        </p>
+        <p>
+            especially if you use ngSwitch a lot
+        </p>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+        <p>Default...</p>
+    </ng-container>
+</ng-container>
+
+<hr />
+
+
+<p class='header'>Augment ngSwitch (less verbose):</p>
+
+<ng-container [ngSwitch]="switchVar2">
+    <ng-container *ngSwitchCase="'a'">
+        <ng-container *ngTemplateOutlet="template1"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'b'">
+        <ng-container *ngTemplateOutlet="template2"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'c'">
+        <ng-container *ngTemplateOutlet="template3"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <ng-container>Default...</ng-container>
+    </ng-container>
+</ng-container>
+
+<hr />
+<p class='header'>Replace ngSwitch (even less verbose):</p>
+<ng-container *ngTemplateOutlet="getTemplate()"></ng-container>
+
+
+<!--I like to define templates down at the bottom so they're out of the way... -->
+<ng-template #template1>
+    <p>
+        This is case 1.
+    </p>
+    <p>
+        It can get pretty long and hard to work with in your HTML file
+    </p>
+    <p>
+        if there's a lot of "stuff" to show for each case
+    </p>
+</ng-template>
+<ng-template #template2>
+    <p>
+        This is case 2.
+    </p>
+    <p>
+        While only one of these show up in the UI
+    </p>
+    <p>
+        they're all specified in the HTML inside the ngSwitch
+    </p>
+</ng-template>
+<ng-template #template3>
+    <p>
+        This is case 3.
+    </p>
+    <p>
+        Which can really bloat your HTML file
+    </p>
+    <p>
+        especially if you use ngSwitch a lot
+    </p>
+</ng-template>
+
+

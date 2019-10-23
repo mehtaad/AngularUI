@@ -1,0 +1,16 @@
+<h1>Track By</h1>
+<button (click)='updateList()'>Update List</button>
+<hr />
+<p>Open the DevTools and find the elements created by the ngFor below,
+    then click the button
+</p>
+Without TrackBy:
+<div *ngFor="let item of list">
+    {{item.name}}
+</div>
+<hr />
+With TrackBy:
+<div *ngFor="let item of list; trackBy: trackByFunc">
+    {{item.name}}
+</div>
+

@@ -1,0 +1,65 @@
+<table #elm>
+    <tr>
+        <td colspan='3'>
+            Hook Running: <span #hookIndicator></span>
+        </td>
+    </tr>
+    <tr>
+        <td class='controls'>
+            <button (click)="changeLocalPrimitiveFunc()">Change Local Primitive Value</button>
+            <button (click)="changeBoundPrimitiveFunc()">Change Bound Primitive Value</button>
+        </td>
+        <td class='controls'>
+                <button (click)="changeBoundObjPropFunc()">Change Bound Object Property</button>
+                <button (click)="changeBoundObjRefFunc()">Change Bound Object Ref</button>            
+        </td>
+        <td class='controls'>
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks2' #cellCtor>
+            <div class='hookName' [style.color]='getColor("ctor")'>constructor</div>
+            <div [innerHtml]="boundValues.safeCtorVals"></div>
+        </td>
+        <td class='hooks2' #cellNgOnChanges>
+            <div class='hookName' [style.color]='getColor("ngOnChanges")'>ngOnChanges</div>
+            <div [innerHtml]="boundValues.safeNgOnChangesVals"></div>
+        </td>
+        <td class='hooks2' #cellNgOnInit>
+            <div class='hookName' [style.color]='getColor("ngOnInit")'>ngOnInit</div>
+            <div [innerHtml]="boundValues.safeNgOnInitVals"></div>
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks2' #cellNgDoCheck>
+            <div class='hookName' [style.color]='getColor("ngDoCheck")'>ngDoCheck</div>
+            <div [innerHtml]="boundValues.safeNgDoCheckVals"></div>
+        </td>
+        <td class='hooks2' #cellNgAfterContentInit>
+            <div class='hookName' [style.color]='getColor("ngAfterContentInit")'>ngAfterContentInit</div>
+            <div [innerHtml]="boundValues.safeNgAfterContentInitVals"></div>
+        </td>
+        <td class='hooks2' #cellNgAfterContentChecked>
+            <div class='hookName' [style.color]='getColor("ngAfterContentChecked")'>ngAfterContentChecked</div>
+            <div [innerHtml]="boundValues.safeNgAfterContentCheckedVals"></div>
+
+        </td>
+    </tr>
+    <tr>
+        <td class='hooks2' #cellNgAfterViewInit>
+            <div class='hookName' [style.color]='getColor("ngAfterViewInit")'>ngAfterViewInit</div>
+            <div [innerHtml]="boundValues.safeNgAfterViewInitVals"></div>
+
+        </td>
+        <td class='hooks2' #cellNgAfterViewChecked>
+            <div class='hookName' [style.color]='getColor("ngAfterViewChecked")'>ngAfterViewChecked</div>
+            <div [innerHtml]="boundValues.safeNgAfterViewCheckedVals"></div>
+        </td>
+        <td class='hooks2' #cellNgOnDestroy>
+            <div class='hookName' [style.color]='getColor("ngOnDestroy")'>ngOnDestroy</div>
+            <div [innerHtml]="boundValues.safeNgOnDestroyVals"></div>
+        </td>
+    </tr>
+</table>
+
+<ng-content></ng-content>

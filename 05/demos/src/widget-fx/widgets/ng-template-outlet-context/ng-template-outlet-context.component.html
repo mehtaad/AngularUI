@@ -1,0 +1,32 @@
+<h1>{{widgetTitle}}</h1>
+<button (click)="toggleCondition()">Toggle Condition</button>
+<hr />
+
+<h4>No context</h4>
+<ng-container *ngTemplateOutlet='noContext'></ng-container>
+
+<h4>Fixed context</h4>
+<ng-container *ngTemplateOutlet='fixedContext; context: 
+    {
+        contentType: "fixed content",
+        details: "The context is hard-coded in the ng-container.  It is marginally more 
+        useful than no context, but not much..."
+    }'>
+</ng-container>
+
+<h4>Dynamic context</h4>
+<ng-container *ngTemplateOutlet='dynamicContext; context: getTemplateContext()'>
+</ng-container>
+
+<!--I like to define templates down at the bottom so they're out of the way... -->
+<ng-template #noContext>
+        This is a template displaying without any context.  Without a context, 
+        we can't specify different content to be displayed.  All we can 
+        do is display the content as-is from the template.
+</ng-template>
+<ng-template #fixedContext let-contentType='contentType' let-details='details'>
+        This is a template displaying {{contentType}}.  {{details}} 
+    </ng-template>
+<ng-template #dynamicContext let-contentType let-details='details'>
+        This is a template displaying {{contentType}}.  {{details}}  
+</ng-template>

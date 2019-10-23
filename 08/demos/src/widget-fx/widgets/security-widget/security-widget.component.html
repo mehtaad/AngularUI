@@ -1,0 +1,59 @@
+<h1>Bypassing Sanitization</h1>
+
+<div class='header'>No Bypass</div>
+<p>
+    <span class='label'>via ngModel</span>:
+    <textarea [(ngModel)]="unsafeHtml" rows="3" cols="100"></textarea>
+</p>
+
+<p>
+    <span class='label'>Bound to InnerHtml</span>:
+    <span [innerHtml]="unsafeHtml"></span>
+</p>
+
+<p>
+    <span class='label'>Interpolated</span>
+    <span class='label'></span>: {{unsafeHtml}}
+</p>
+
+<p>
+    <span class='label'>Bound to href</span>:
+    <a [href]="unsafeHref">Test Link</a>
+</p>
+
+<p>
+    <span class='label'>Bound to style</span>:
+</p>
+<div [style]="unsafeStyle">
+    Background color would be RED if security bypassed
+</div>
+
+
+<hr />
+
+<div class='header'>With Bypass</div>
+<p>
+    <span class='label'>via ngModel</span>:
+    <textarea [(ngModel)]="safeHtml" rows="2" cols="100"></textarea>
+</p>
+<p>
+    <span class='label'>Bound to InnerHtml</span>:
+    <span [innerHtml]="safeHtml"></span>
+</p>
+
+<p>
+    <span class='label'>Interpolated</span>
+    <span class='label'></span>: {{safeHtml}}
+</p>
+
+<p>
+    <span class='label'>Bound to href</span>:
+    <a [href]="safeHref">Test Link</a>
+</p>
+
+<p>
+    <span class='label'>Bound to style</span>:
+</p>
+<div [style]="safeStyle">
+    Background color would be RED if content not sanitized
+</div>

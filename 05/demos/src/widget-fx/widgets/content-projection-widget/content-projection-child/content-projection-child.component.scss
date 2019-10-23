@@ -1,0 +1,11 @@
+.title{
+    font-size: larger;
+    text-decoration: underline;
+    text-align: center;
+}
+.content{   // <-- not applied, styling is handled by the parent!
+    color: blue;
+}
+.wrapper{
+    padding: 10px;
+}

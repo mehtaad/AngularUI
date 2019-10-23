@@ -1,0 +1,26 @@
+<div>
+  <div *ngIf="dataObs | async; else loader"></div>
+  <ng-content select='.preForm'></ng-content>
+  <form (ngSubmit)="frmSubmit()" [formGroup]="form">
+    <div *ngFor="let oneField of fields, trackBy:fieldIdTracker" class="form-row">
+      <field [field]="oneField" [form]="form" *ngIf="oneField.hint" (hint)="oneField.hint($event)"></field>
+      <field [field]="oneField" [form]="form" *ngIf="!oneField.hint"></field>
+    </div>
+    <div class="form-row">
+      <div id='buttons'>
+        <button type="submit" [disabled]="!form.valid" class='formButton submitButton'>Save</button>
+        <button type="cancel" class='formButton cancelButton'>Cancel</button>
+      </div>
+    </div>
+  </form>
+  <ng-content select='.postForm'></ng-content>
+</div>
+
+
+<!-- Templates -->
+<ng-template #loader>
+  <div id='modal'></div>
+  <div id="message">
+    Loading...
+  </div>
+</ng-template>
